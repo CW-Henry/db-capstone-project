@@ -2,33 +2,33 @@
 
 -- Task 1
 
--- DELIMITER //
+DELIMITER //
 
--- CREATE PROCEDURE GetMaxQuantity()
--- BEGIN
--- SELECT MAX(Quantity) AS 'Max Quantity in Order' FROM Orders;
--- END;// 
--- DELIMITER ;
+CREATE PROCEDURE GetMaxQuantity()
+BEGIN
+SELECT MAX(Quantity) AS 'Max Quantity in Order' FROM Orders;
+END;// 
+DELIMITER ;
 
--- CALL GetMaxQuantity(); 
+CALL GetMaxQuantity(); 
 
 -- Task 2
 
--- PREPARE GetOrderDetail FROM 
--- 'SELECT OrderID, Quantity, TotalCost FROM Orders 
--- WHERE OrderID = ?'
+PREPARE GetOrderDetail FROM 
+'SELECT OrderID, Quantity, TotalCost FROM Orders 
+WHERE OrderID = ?'
 
--- SET @id = 1;
--- EXECUTE GetOrderDetail USING @id;
+SET @id = 1;
+EXECUTE GetOrderDetail USING @id;
 
 -- Task 3
 
--- DELIMITER //
--- CREATE PROCEDURE CancelOrder(IN user_order_id INT)
--- BEGIN
--- DELETE FROM Orders WHERE OrderID = user_order_id;
--- END;//
--- DELIMITER ;
+DELIMITER //
+CREATE PROCEDURE CancelOrder(IN user_order_id INT)
+BEGIN
+DELETE FROM Orders WHERE OrderID = user_order_id;
+END;//
+DELIMITER ;
 
--- CALL CancelOrder(5);
+CALL CancelOrder(5);
 
