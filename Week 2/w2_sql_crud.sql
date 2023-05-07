@@ -11,7 +11,7 @@ IN booking_date DATE)
 BEGIN
 INSERT INTO Bookings(BookingID, Date, TableNo, CustomerDetailsID) VALUES
 (booking_id, booking_date, table_number, customer_id);
-SELECT @message := 'New Booking added' AS 'Confirmation';
+-- SELECT @message := 'New Booking added' AS 'Confirmation';
 END;//
 DELIMITER ;
 
@@ -25,7 +25,7 @@ IN booking_id INT,
 IN booking_date DATE)
 BEGIN
 UPDATE Bookings SET Date = booking_date WHERE BookingID = booking_id;
-SELECT CONCAT('Booking ', booking_id, ' updated') AS 'Confirmation';
+-- SELECT CONCAT('Booking ', booking_id, ' updated') AS 'Confirmation';
 END;//
 DELIMITER ;
 
@@ -37,7 +37,7 @@ DELIMITER //
 CREATE PROCEDURE CancelBooking(IN booking_id INT)
 BEGIN
 DELETE FROM Bookings WHERE BookingID = booking_id;
-SELECT CONCAT('Booking ', booking_id, ' cancelled') AS 'Confirmation';
+-- SELECT CONCAT('Booking ', booking_id, ' cancelled') AS 'Confirmation';
 END;//
 DELIMITER ;
 
